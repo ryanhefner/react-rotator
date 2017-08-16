@@ -1,6 +1,6 @@
 {
   "name": "react-rotator",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "description": "Flexible React component for composing rotators, carousels, slideshows and more.",
   "repository": "ryanhefner/react-rotator",
