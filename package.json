@@ -6,8 +6,9 @@
   "repository": "ryanhefner/react-rotator",
   "author": "Ryan Hefner <hi@ryanhefner.com> (https://www.ryanhefner.com)",
   "files": [
-    "index.js",
     "es",
+    "index.js",
+    "src",
     "umd"
   ],
   "directories": {

@@ -5,12 +5,14 @@ Flexible React component for composing rotators, carousels, slideshows and more.
 ## Install
 
 Via [npm](https://npmjs.com/package/react-rotator):
-```
+
+```sh
 npm install --save react-rotator
 ```
 
 Via [Yarn](https://yarn.fyi/react-rotator):
-```
+
+```sh
 yarn add react-rotator
 ```
 
@@ -64,7 +66,7 @@ managing it’s status or responsible for initiating progression within the `<Ro
 
 ##### Example
 
-```
+```js
 import Rotator from 'react-rotator';
 
 ...
@@ -99,7 +101,7 @@ some common paging indicator components that you can use, [react-paging-indicato
 
 ##### Example
 
-```
+```js
 import Rotator from 'react-rotator';
 import {DotsIndicator} from 'react-paging-indicators';
 
