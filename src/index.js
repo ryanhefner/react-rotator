@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import cleanProps from 'clean-react-props';
 
@@ -82,6 +82,7 @@ class Rotator extends Component {
   render() {
     const {
       children,
+      component,
       indicator,
     } = this.props;
 
@@ -106,22 +107,26 @@ class Rotator extends Component {
         })
       : null;
 
-    return (
-      <div {...cleanProps(this.props)}>
-        {clonedChildren}
-        {clonedIndicator}
-      </div>
+    return React.createElement(component, {
+        ...cleanProps(this.props)
+      },
+      [...clonedChildren, clonedIndicator]
     );
   }
 }
 
 Rotator.propTypes = {
+  component: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.string,
+  ]),
   index: PropTypes.number,
   indicator: PropTypes.element,
   onChange: PropTypes.func,
 };
 
 Rotator.defaultProps = {
+  component: 'div',
   index: 0,
   onChange: () => {},
 };
