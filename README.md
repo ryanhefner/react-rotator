@@ -24,7 +24,8 @@ managing various ways that these components can exist.
 
 ### Properties
 
-* `index:Number` - Index of the currently active child.
+* `component:Element | String` - React component or HTMLElemnt to render as wrapper for rotator. (Default: `div`)
+* `index:Number` - Index of the currently active child. (Default: `0`)
 * `onChange:Function` - Callback for when the index is changed internally, either
 via a child or indicator.
 
@@ -123,4 +124,4 @@ import {DotsIndicator} from 'react-paging-indicators';
 
 ## License
 
-[MIT](LICENSE)
+[MIT](LICENSE) © [Ryan Hefner](https://www.ryanhefner.com)
