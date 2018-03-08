@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import cleanProps from 'clean-react-props';
+import uuid from 'uuid/v4';
 
 class Rotator extends Component {
   constructor(props) {
@@ -8,6 +9,7 @@ class Rotator extends Component {
 
     this.state = {
       index: props.index,
+      keyPrefix: `rotator-${uuid()}`,
     };
 
     this.onIndicatorChange = this.onIndicatorChange.bind(this);
@@ -88,11 +90,13 @@ class Rotator extends Component {
 
     const {
       index,
+      keyPrefix,
     } = this.state;
 
     const clonedChildren = React.Children.toArray(children).map((child, childIndex) => {
       return React.cloneElement(child, {
         index: childIndex,
+        key: `${keyPrefix}-child-${childIndex}`,
         position: (index - childIndex) * -1,
         onActive: this.onItemActive,
         onFinish: this.onItemFinish,
@@ -102,6 +106,7 @@ class Rotator extends Component {
     const clonedIndicator = indicator
       ? React.cloneElement(indicator, {
           index,
+          key: `${keyPrefix}-indicator`,
           length: children.length,
           onChange: this.onIndicatorChange,
         })
