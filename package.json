@@ -32,7 +32,8 @@
   },
   "dependencies": {
     "clean-react-props": "^0.1.1",
-    "prop-types": "^15.5.10"
+    "prop-types": "^15.5.10",
+    "uuid": "^3.2.1"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
@@ -51,14 +52,10 @@
     "rollup-plugin-babel": "^3.0.3",
     "rollup-plugin-commonjs": "^9.0.0",
     "rollup-plugin-json": "^2.3.0",
+    "rollup-plugin-node-builtins": "^2.1.2",
     "rollup-plugin-node-resolve": "^3.2.0",
     "rollup-plugin-uglify": "^3.0.0",
     "rollup-watch": "^4.3.1"
-  },
-  "browserify": {
-    "transform": [
-      "loose-envify"
-    ]
   },
   "keywords": [
     "react",
