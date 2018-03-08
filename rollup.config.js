@@ -1,4 +1,5 @@
 import babel from 'rollup-plugin-babel';
+import builtins from 'rollup-plugin-node-builtins';
 import commonjs from 'rollup-plugin-commonjs';
 import json from 'rollup-plugin-json';
 import resolve from 'rollup-plugin-node-resolve';
@@ -13,6 +14,7 @@ const config = {
     format: 'umd',
     globals: {
       'react': 'React',
+      'crypto': 'global.crypto',
     },
     banner: `/*! ${pkg.name} v${pkg.version} | (c) ${new Date().getFullYear()} Ryan Hefner | ${pkg.license} License | https://github.com/${pkg.repository} !*/`,
     footer: '/* follow me on Twitter! @ryanhefner */',
@@ -24,6 +26,7 @@ const config = {
     babel({
       exclude: 'node_modules/**',
     }),
+    builtins(),
     resolve(),
     commonjs({
       include: /node_modules/,
